@@ -1,8 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Text} from 'react-native-gesture-handler';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
 
 function AuthHomeScreen() {
   /* 네비게이션은 스택처럼 쌓인다 */

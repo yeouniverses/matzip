@@ -1,14 +1,13 @@
-import React from 'react';
 import {StyleSheet, SafeAreaView, Text} from 'react-native';
 
-function MapHomeScreen() {
+function FeedDetailScreen() {
   return (
     <SafeAreaView>
-      <Text>MapHomeScreen</Text>
+      <Text>FeedDetailScreen</Text>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({});
 
-export default MapHomeScreen;
+export default FeedDetailScreen;

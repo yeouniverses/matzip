@@ -5,20 +5,20 @@ import SignupScreen from '../screens/auth/SignupScreen';
 import {createStaticNavigation} from '@react-navigation/native';
 
 const AuthStack = createStackNavigator({
-  // 네이게이터 전체의 옵션 설정 가능
+  // 네비게이터 전체의 옵션 설정 가능
   screenOptions: {
     headerTitleAlign: 'center',
     headerBackButtonDisplayMode: 'minimal',
-    headerTintColor: 'black',
+    headerTintColor: colors.BLACK,
     headerStyle: {
-      backgroundColor: 'white',
-      shadowColor: 'gray',
+      backgroundColor: colors.WHITE,
+      shadowColor: colors.GRAY_500,
     },
     headerTitleStyle: {
       fontSize: 16,
     },
     cardStyle: {
-      backgroundColor: 'white',
+      backgroundColor: colors.WHITE,
     },
   },
   screens: {

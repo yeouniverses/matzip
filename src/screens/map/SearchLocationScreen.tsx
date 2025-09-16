@@ -1,14 +1,14 @@
 import React from 'react';
 import {StyleSheet, SafeAreaView, Text} from 'react-native';
 
-function MapHomeScreen() {
+function SearchLocationScreen() {
   return (
     <SafeAreaView>
-      <Text>MapHomeScreen</Text>
+      <Text>SearchLocationScreen</Text>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({});
 
-export default MapHomeScreen;
+export default SearchLocationScreen;

@@ -1,7 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Text} from 'react-native-gesture-handler';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
 
 function SignupScreen() {
   return (
