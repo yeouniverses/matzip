@@ -3,6 +3,7 @@ import AuthHomeScreen from '../screens/auth/AuthHomeScreen';
 import LoginScreen from '../screens/auth/LoginScreen';
 import SignupScreen from '../screens/auth/SignupScreen';
 import {createStaticNavigation} from '@react-navigation/native';
+import {colors} from '../constants/colors';
 
 const AuthStack = createStackNavigator({
   // 네비게이터 전체의 옵션 설정 가능

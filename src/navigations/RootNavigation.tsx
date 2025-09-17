@@ -1,13 +1,9 @@
 import AuthNavigation from './AuthNavigation';
-import DrawerNavigation from './DrawerNavigateion';
+import DrawerNavigation from './DrawerNavigation';
 
 function RootNavigation() {
-  return (
-    <>
-      ( isLogin ? <DrawerNavigation></DrawerNavigation> :
-      <AuthNavigation></AuthNavigation>)
-    </>
-  );
+  // return <>{isLogin ? <DrawerNavigation /> : <AuthNavigation />}</>;
+  return <DrawerNavigation />;
 }
 
 export default RootNavigation;
