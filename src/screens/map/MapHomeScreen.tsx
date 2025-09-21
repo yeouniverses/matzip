@@ -1,6 +1,6 @@
+import DrawerButton from '@/components/DrawerButton';
 import React from 'react';
 import {StyleSheet, SafeAreaView, Text} from 'react-native';
-import DrawerButton from '../../components/DrawerButton';
 
 function MapHomeScreen() {
   return (

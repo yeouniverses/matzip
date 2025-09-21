@@ -1,7 +1,7 @@
+import {FeedStackParamList} from '@/types/navigation';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {StyleSheet, SafeAreaView, Text} from 'react-native';
-import {FeedStackParamList} from '../../types/navigation';
 
 type Navigation = StackNavigationProp<FeedStackParamList>;
 
