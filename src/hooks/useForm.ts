@@ -29,8 +29,6 @@ function useForm<T>({initialValue}: useFormProps<T>) {
     values,
     touched,
     errors,
-    handleChangeValue,
-    handleBlur,
     getTextInputProps,
   };
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, View, SafeAreaView} from 'react-native';
 
 import CustomButton from '@/components/CustomButton';
@@ -15,29 +15,21 @@ function SignupScreen() {
       <View style={styles.inputContainer}>
         <InputField
           placeholder="이메일"
-          value={signup.values.email}
           touched={signup.touched.email}
-          onChangeText={text => signup.handleChangeValue('email', text)}
-          onBlur={() => signup.handleBlur('email')}
+          {...signup.getTextInputProps('email')}
         />
         <InputField
           secureTextEntry
           textContentType="oneTimeCode"
           placeholder="비밀번호"
-          value={signup.values.password}
           touched={signup.touched.password}
-          onChangeText={text => signup.handleChangeValue('password', text)}
-          onBlur={() => signup.handleBlur('password')}
+          {...signup.getTextInputProps('password')}
         />
         <InputField
           secureTextEntry
           placeholder="비밀번호 확인"
-          value={signup.values.passwordConfirm}
           touched={signup.touched.passwordConfirm}
-          onChangeText={text =>
-            signup.handleChangeValue('passwordConfirm', text)
-          }
-          onBlur={() => signup.handleBlur('passwordConfirm')}
+          {...signup.getTextInputProps('passwordConfirm')}
         />
       </View>
       <CustomButton label="회원가입" variant="filled" size="large" />
