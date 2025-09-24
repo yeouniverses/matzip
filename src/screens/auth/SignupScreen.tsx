@@ -4,10 +4,12 @@ import {StyleSheet, View, SafeAreaView} from 'react-native';
 import CustomButton from '@/components/CustomButton';
 import InputField from '@/components/InputField';
 import useForm from '@/hooks/useForm';
+import {validateSignup} from '@/utils/validation';
 
 function SignupScreen() {
   const signup = useForm({
     initialValue: {email: '', password: '', passwordConfirm: ''},
+    validate: validateSignup,
   });
 
   return (
