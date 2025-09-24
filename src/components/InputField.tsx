@@ -11,7 +11,7 @@ function InputField({error, touched, ...props}: InputFieldProps) {
   return (
     <View>
       <TextInput
-        style={[styles.input, Boolean(error) && styles.inputError]}
+        style={[styles.input, touched && Boolean(error) && styles.inputError]}
         {...props}
       />
       {touched && Boolean(error) && <Text style={styles.error}>{error}</Text>}
