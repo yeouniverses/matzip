@@ -5,8 +5,10 @@ import CustomButton from '@/components/CustomButton';
 import InputField from '@/components/InputField';
 import useForm from '@/hooks/useForm';
 import {validateLogin} from '@/utils/validation';
+import useAuth from '@/hooks/queries/useAuth';
 
 function LoginScreen() {
+  const {loginMutation} = useAuth();
   const passwordRef = useRef<TextInput | null>(null);
   const login = useForm({
     initialValue: {email: '', password: ''},
@@ -14,7 +16,7 @@ function LoginScreen() {
   });
 
   const handleSubmit = () => {
-    console.log('login.values', login.values);
+    loginMutation.mutate(login.values);
   };
 
   return (
@@ -23,8 +25,8 @@ function LoginScreen() {
         <InputField
           autoFocus
           placeholder="이메일"
-          submitBehavior="submit" // enter 쳐도 키보드 창 닫히지 않음
-          returnKeyType="next" // submit 버튼 -> next
+          submitBehavior="submit"
+          returnKeyType="next"
           inputMode="email"
           onSubmitEditing={() => passwordRef.current?.focus()}
           touched={login.touched.email}
@@ -38,7 +40,7 @@ function LoginScreen() {
           placeholder="비밀번호"
           returnKeyType="join"
           maxLength={20}
-          onSubmitEditing={handleSubmit} // 비밀번호 입력 후 Enter 누를 시 바로 제출함수(handleSubmit) 실행
+          onSubmitEditing={handleSubmit}
           touched={login.touched.password}
           error={login.errors.password}
           {...login.getTextInputProps('password')}
