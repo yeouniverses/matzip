@@ -1,11 +1,11 @@
+import {useRef} from 'react';
 import {SafeAreaView, StyleSheet, TextInput, View} from 'react-native';
 
 import CustomButton from '@/components/CustomButton';
 import InputField from '@/components/InputField';
 import useForm from '@/hooks/useForm';
-import {validateSignup} from '@/utils/validation';
-import {useRef} from 'react';
 import useAuth from '@/hooks/queries/useAuth';
+import {validateSignup} from '@/utils/validation';
 
 function SignupScreen() {
   const {signupMutation, loginMutation} = useAuth();
@@ -21,7 +21,7 @@ function SignupScreen() {
 
     signupMutation.mutate(
       {email, password},
-      {onSuccess: () => loginMutation.mutate({email, password})}, // sign up 이후 바로 로그인 되도록
+      {onSuccess: () => loginMutation.mutate({email, password})},
     );
   };
 
