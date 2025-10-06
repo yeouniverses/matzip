@@ -8,15 +8,14 @@ module.exports = {
         moduleName: '@env',
         path: '.env',
         safe: false,
-        allowUndefined: true,
+        allowUndefined: false, // 키가 없으면 빌드 에러 내기 원하면 true로
+        verbose: false,
       },
     ],
     [
       'module-resolver',
       {
-        alias: {
-          '@': './src',
-        },
+        alias: {'@': './src'},
       },
     ],
   ],
