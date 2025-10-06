@@ -1,8 +1,17 @@
+import CustomButton from '@/components/CustomButton';
+import {colors} from '@/constants/colors';
 import {AuthStackParamList} from '@/types/navigation';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import React, {useEffect} from 'react';
-import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  Pressable,
+  Image,
+  View,
+} from 'react-native';
 
 type Navigation = StackNavigationProp<AuthStackParamList>;
 
@@ -15,13 +24,52 @@ function AuthHomeScreen() {
   }, []);
 
   return (
-    <SafeAreaView>
-      <Text onPress={() => navigation.navigate('Login')}>로그인으로 이동</Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.imageContainer}>
+        <Image
+          source={require('@/assets/matzip.png')}
+          style={styles.image}
+          resizeMode="contain"
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <CustomButton
+          label="이메일 로그인"
+          onPress={() => navigation.navigate('Login')}
+        />
+        <Pressable onPress={() => navigation.navigate('Signup')}>
+          <Text style={styles.emailText}>이메일로 가입하기</Text>
+        </Pressable>
+      </View>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  imageContainer: {
+    flex: 1.5,
+    alignItems: 'center',
+  },
+  image: {
+    width: 200,
+    height: '100%',
+  },
+  buttonContainer: {
+    flex: 1, // buttonContainer과 imageContainer이 각각 비율이 1:1 일 수 있도록
+    alignItems: 'center',
+    paddingHorizontal: 30,
+    gap: 5,
+  },
+  emailText: {
+    textDecorationLine: 'underline',
+    fontWeight: '500',
+    padding: 10,
+    color: colors.BLACK,
+  },
+});
 
 export default AuthHomeScreen;
 
